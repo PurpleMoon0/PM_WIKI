@@ -20,29 +20,29 @@ theme:
   palette:
     #primary: purple
 
-    # 根据系统调节日/夜间模式
+    # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
       toggle:
         icon: material/brightness-auto
-        name: 切换至日间模式
+        name: 切换至浅色模式 Switch to light mode
 
-    # 日间模式
-    - media: "(prefers-color-scheme: light)" # 根据用户系统选首选项择日间模式
-      scheme: default # 日间模式
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
       primary: purple # 顶栏颜色
       accent: deep purple # 链接等可交互元件的高亮色
       toggle:
-        icon: material/weather-sunny # 图标
-        name: 切换至夜间模式 # 鼠标悬浮提示
+        icon: material/weather-sunny
+        name: 切换至深色模式 Switch to dark mode
 
-    # 夜间模式
-    - media: "(prefers-color-scheme: light)"
-      scheme: slate # 夜间模式
-      primary: black 
-      accent: cyan
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: brown
+      accent: deep orange
       toggle:
         icon: material/weather-night
-        name: 切换至根据系统调节日/夜间模式
+        name: 切换至跟随系统模式 Switch to system preference
 
   # 更改图标
   logo: assets/logo.png # 网站logo（顶栏）
@@ -97,7 +97,8 @@ extra:
 plugins:
   - search
   - tags  #标签
-  - blog
+  - blog:
+      pagination_per_page: 5  #每页显示5篇文章
 
   # git-revision-date-localized 插件增加了对在每个页面底部添加上次更新日期和创建文档的支持。
   # 详情访问官方文档https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#revisioning
@@ -151,11 +152,11 @@ markdown_extensions:
   - pymdownx.superfences # 代码块高亮插件
   - meta # 支持Markdown文件上方自定义标题标签等
 
-extra_javascript:
-  - javascripts/extra.js
-  - javascripts/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+# extra_javascript:
+#   - javascripts/extra.js
+#   - javascripts/mathjax.js
+#   - https://polyfill.io/v3/polyfill.min.js?features=es6
+#   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 extra_css:
   - stylesheets/extra.css
 
